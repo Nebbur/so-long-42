@@ -12,10 +12,10 @@
 
 #include "../includes/so_long.h"
 
-void	init_struct(game_data *game)
+void	init_struct(t_game *game)
 {
 	game->img = ft_calloc(sizeof(t_data), 1);
-	game->player = ft_calloc(sizeof(player_st), 1);
+	game->player = ft_calloc(sizeof(t_player), 1);
 	game->sprites = ft_calloc(sizeof(t_sprites), 1);
 	game->coin = ft_calloc(sizeof(t_coin), 1);
 	verify_alloc(game->img, game);
@@ -39,8 +39,33 @@ void	init_struct(game_data *game)
 	game->exit[1] = 0;
 }
 
+void	init_enemies(t_game *game)
+{
+	int	rows;
+	int	cols;
+	int	id;
+
+	id = 0;
+	rows = -1;
+	game->e = 0;
+	while (game->map[++rows])
+	{
+		cols = -1;
+		while (game->map[rows][++cols])
+		{
+			if (game->map[rows][cols] == 'M')
+			{
+				game->e++;
+				if (id == 4)
+					id = 0;
+				create_enemy(rows, cols, id++, game);
+			}
+		}
+	}
+}
+
 // General loop of the game
-static int	game_loop(game_data *game)
+static int	game_loop(t_game *game)
 {
 	long long	now;
 	long long	diff_millisecs;
@@ -68,7 +93,7 @@ static int	game_loop(game_data *game)
 
 int	main(int argc, char **argv)
 {
-	game_data	game;
+	t_game	game;
 
 	if (argc != 2)
 	{

@@ -11,8 +11,8 @@ INCS	= ./includes
 SRCS_DIR= ./srcs
 OBJS_DIR= ./obj
 
-SRCF    = so_long fps map player enemies enemies_2 aux free hook hook_2 player_2 put_on_screen \
-			sprites sprites_2 treating_loop wall wall_2
+SRCF    = so_long fps map map_process map_checker map_checker_2 player enemies enemies_2 aux \
+			free hook hook_2 player_2 put_on_screen sprites sprites_2 treating_loop wall wall_2
 
 SRCS= $(addprefix ${SRCS_DIR}/, $(addsuffix .c, ${SRCF}))
 OBJS= $(addprefix ${OBJS_DIR}/, $(addsuffix .o, ${SRCF}))

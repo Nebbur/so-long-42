@@ -23,7 +23,7 @@ long long	millitimestamp(void)
 	return (microtime);
 }
 
-void	fps(game_data *game)
+void	fps(t_game *game)
 {
 	game->frame_count = 0;
 	game->last_time = game->current_time;

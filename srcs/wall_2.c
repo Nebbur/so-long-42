@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-void	aux_wall_2(char **m, int r, int c, game_data *game)
+void	aux_wall_2(char **m, int r, int c, t_game *game)
 {
 	if (r != 0 && c > 0 && m[r][c - 1] != '1' && r > 0 && 
 		m[r][c] == '1' && m[r][c + 1] == '1' && m[r - 1][c] != '1')

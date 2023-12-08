@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-static void	aux_wall_4(char **m, int r, int c, game_data *g)
+static void	aux_wall_4(char **m, int r, int c, t_game *g)
 {
 	if (c < g->col && c > 0 && r < g->rows && ((r == 0) || \
 	(r > 0 && m[r - 1][c] == '1')) && (m[r][c + 1] == '1' || c == g->col - 1) \
@@ -38,7 +38,7 @@ static void	aux_wall_4(char **m, int r, int c, game_data *g)
 	}
 }
 
-static void	aux_wall_3(char **m, int r, int c, game_data *g)
+static void	aux_wall_3(char **m, int r, int c, t_game *g)
 {
 	if (c < g->col - 1 && c > 0 && r < g->rows \
 	&& m[r][c - 1] == '1' && m[r + 1][c] == '1' && m[r + 1][c + 1] != '1'\
@@ -64,7 +64,7 @@ static void	aux_wall_3(char **m, int r, int c, game_data *g)
 		aux_wall_4(m, r, c, g);
 }
 
-static void	aux_wall_5(char **m, int r, int c, game_data *game)
+static void	aux_wall_5(char **m, int r, int c, t_game *game)
 {
 	if (c == 0 && (m[r][c + 1] != '1') || (r > 0 && r < game->rows && \
 	c < game->col - 1 && m[r][c + 1] != '1' && m[r][c - 1] == '1' && \
@@ -83,7 +83,7 @@ static void	aux_wall_5(char **m, int r, int c, game_data *game)
 		aux_wall_3(m, r, c, game);
 }
 
-static void	aux_wall(char **m, int r, int c, game_data *game)
+static void	aux_wall(char **m, int r, int c, t_game *game)
 {
 	if ((c == 0 && r == game->rows && m[r - 1][c + 1] != '1') || \
 	(c < game->col - 1 && c >= 0 && r > 0 && m[r - 1][c] == '1' && \
@@ -108,7 +108,7 @@ static void	aux_wall(char **m, int r, int c, game_data *game)
 		aux_wall_5(m, r, c, game);
 }
 
-void	wall(game_data *game)
+void	wall(t_game *game)
 {
 	char	**m;
 	int		r;

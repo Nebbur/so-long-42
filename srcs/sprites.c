@@ -40,7 +40,7 @@ char	*path_sprite(char *s_name, int i)
 	return (str2);
 }
 
-static void	aux_load_sprite(int i_d[2], int s_type, char *path, game_data *game)
+static void	aux_load_sprite(int i_d[2], int s_type, char *path, t_game *game)
 {
 	if (s_type == 1)
 		game->sprites->p[i_d[0]] = mlx_xpm_file_to_image(game->mlx, 
@@ -65,7 +65,7 @@ static void	aux_load_sprite(int i_d[2], int s_type, char *path, game_data *game)
 				path, &i_d[1], &i_d[1]);
 }
 
-void	load_sprite(char *s_name, int s_nbr, int s_type, game_data *game)
+void	load_sprite(char *s_name, int s_nbr, int s_type, t_game *game)
 {
 	char		*path;
 	int			i_d[2];
@@ -90,7 +90,7 @@ void	load_sprite(char *s_name, int s_nbr, int s_type, game_data *game)
 	}
 }
 
-void	init_sprites(game_data *game)
+void	init_sprites(t_game *game)
 {
 	load_sprite("player", 1, 1, game);
 	load_sprite("tile_rock", 37, 2, game);

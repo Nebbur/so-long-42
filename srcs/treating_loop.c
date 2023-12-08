@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-void	background(game_data *game)
+void	background(t_game *game)
 {
 	int	rows;
 	int	cols;
@@ -33,7 +33,7 @@ void	background(game_data *game)
 	}
 }
 
-void	scroll(game_data *game)
+void	scroll(t_game *game)
 {
 	char	**m;
 	int		r;
@@ -52,7 +52,7 @@ void	scroll(game_data *game)
 		draw_block(1 * BPX, r * BPX, game->sprites->s[3], game);
 }
 
-void	item(game_data *game)
+void	item(t_game *game)
 {
 	t_sprites	*s;
 	int			c;

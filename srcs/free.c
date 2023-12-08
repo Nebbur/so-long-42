@@ -74,7 +74,7 @@ void	check_null(void **pointer)
 	}
 }
 
-void	free_to_all(game_data *game)
+void	free_to_all(t_game *game)
 {
 	check_null((void **)&(game->img));
 	check_null((void **)&(game->player));

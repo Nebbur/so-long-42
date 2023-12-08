@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-void	show_moves(game_data *game)
+void	show_moves(t_game *game)
 {
 	char	*m;
 	char	*debug_msg;
@@ -26,7 +26,7 @@ void	show_moves(game_data *game)
 	free (debug_msg);
 }
 
-void	show_life(game_data *game)
+void	show_life(t_game *game)
 {
 	char	*nl;
 	char	*debug_msg;
@@ -38,7 +38,7 @@ void	show_life(game_data *game)
 	free (debug_msg);
 }
 
-void	show_coins(game_data *game)
+void	show_coins(t_game *game)
 {
 	char	*c;
 	char	*temp;
@@ -57,14 +57,14 @@ void	show_coins(game_data *game)
 	free (debug_msg);
 }
 
-void	show_debug(game_data *game)
+void	show_debug(t_game *game)
 {
 	show_moves(game);
 	show_life(game);
 	show_coins(game);
 }
 
-void	draw_block(int x, int y, void *sprite, game_data *game)
+void	draw_block(int x, int y, void *sprite, t_game *game)
 {
 	if (x < -BPX || y < -BPX || x > WINDOW_WIDTH || y > WINDOW_HEIGHT)
 		return ;

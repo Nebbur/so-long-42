@@ -29,9 +29,9 @@ int	get_action_keycode(int keycode)
 	return (0);
 }
 
-void	unset_action(int keycode, game_data *game)
+void	unset_action(int keycode, t_game *game)
 {
-	player_st	*p;
+	t_player	*p;
 
 	p = game->player;
 	if (p->ac[0] == get_action_keycode(keycode))
@@ -47,9 +47,9 @@ void	unset_action(int keycode, game_data *game)
 		p->ac[2] = 0;
 }
 
-void	set_action(int keycode, game_data *game)
+void	set_action(int keycode, t_game *game)
 {
-	player_st	*p;
+	t_player	*p;
 
 	p = game->player;
 	if (get_action_keycode(keycode) != 5)

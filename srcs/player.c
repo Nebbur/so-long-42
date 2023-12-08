@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-void	init_player(game_data *game)
+void	init_player(t_game *game)
 {
 	game->player->nl = NBR_LIFE;
 	game->player_out = 0;
@@ -24,7 +24,7 @@ void	init_player(game_data *game)
 	game->player->collectable_pos[1] = 0;
 }
 
-void	aux_move(int xy[2], int rem_xy[2], int t, game_data *game)
+void	aux_move(int xy[2], int rem_xy[2], int t, t_game *game)
 {
 	if (t == 1)
 		check_coin_position(game, xy[0] + rem_xy[0] - game->pil, xy[1] \
@@ -42,7 +42,7 @@ void	aux_move(int xy[2], int rem_xy[2], int t, game_data *game)
 	game->moves++;
 }
 
-static void	move_y(game_data *game)
+static void	move_y(t_game *game)
 {
 	int			xy[2];
 	int			rem_xy[2];
@@ -66,7 +66,7 @@ static void	move_y(game_data *game)
 		aux_move_y(xy, rem_xy, game);
 }
 
-static void	move_x(game_data *game)
+static void	move_x(t_game *game)
 {
 	int			xy[2];
 	int			rem_xy[2];
@@ -91,7 +91,7 @@ static void	move_x(game_data *game)
 }
 
 //main function player
-void	player(game_data *game)
+void	player(t_game *game)
 {
 	if (game->player->nl <= 0)
 	{

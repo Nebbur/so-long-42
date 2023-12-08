@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-void	aux_move_y(int xy[2], int rem_xy[2], game_data *game)
+void	aux_move_y(int xy[2], int rem_xy[2], t_game *game)
 {
 	rem_xy[1] = 1;
 	if (game->visible_map[xy[0] - game->pil][xy[1] + 1 - game->pic] == 'E' \
@@ -24,7 +24,7 @@ void	aux_move_y(int xy[2], int rem_xy[2], game_data *game)
 		aux_move(xy, rem_xy, 1, game);
 }
 
-void	aux_move_x(int xy[2], int rem_xy[2], game_data *game)
+void	aux_move_x(int xy[2], int rem_xy[2], t_game *game)
 {
 	rem_xy[0] = 1;
 	rem_xy[1] = 0;
@@ -37,13 +37,13 @@ void	aux_move_x(int xy[2], int rem_xy[2], game_data *game)
 		aux_move(xy, rem_xy, 1, game);
 }
 
-void	check_coin_position(game_data *game, int x, int y)
+void	check_coin_position(t_game *game, int x, int y)
 {
 	if (game->visible_map[x][y] == 'C')
 		game->player->col_collected++;
 }
 
-void	actual_position(game_data *game)
+void	actual_position(t_game *game)
 {
 	int	rows;
 	int	cols;
@@ -71,7 +71,7 @@ void	actual_position(game_data *game)
 	}
 }
 
-void	player_going_out(game_data *game)
+void	player_going_out(t_game *game)
 {
 	mlx_loop_end(game->mlx);
 }
