@@ -78,9 +78,13 @@ void	free_to_all(t_game *game)
 {
 	check_null((void **)&(game->img));
 	check_null((void **)&(game->player));
-	check_null((void **)&(game->enemies));
 	check_null((void **)&(game->coin));
 	destroy_sprites(game);
+	if (game->enemies != NULL)
+	{
+		free_enemy_list(game->enemies);
+		game->enemies = NULL;
+	}
 	mlx_destroy_window(game->mlx, game->mlx_win);
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);

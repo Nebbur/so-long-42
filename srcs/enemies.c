@@ -96,7 +96,8 @@ void	enemy_collision(int row, int col, t_game *game)
 		game->player->nl--;
 }
 
-// if (game->enemy->cont >= 30): determina a velocidade com a qual os inimigos se movem
+// if (game->enemy->cont >= 30): 
+//determina a velocidade com a qual os inimigos se movem
 void	enemies(t_game *game)
 {
 	t_list	*enemy_node;
