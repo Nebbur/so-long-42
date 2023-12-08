@@ -30,13 +30,14 @@ int	keyup_hook(int keycode, t_game *game)
 int	close_hook(int keycode, t_game *game)
 {
 	if (keycode == 0)
-		mlx_loop_end(game->mlx);
+		mlx_destroy_window(game->mlx, game->mlx_win);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
 
 void	hook_register(t_game *game)
 {
-	mlx_hook(game->mlx_win, 17, 1L << 0, close_hook, game);
+	mlx_hook(game->mlx_win, 17, 1L << 17, close_hook, game);
 	mlx_hook(game->mlx_win, 2, 1L << 0, keydown_hook, game);
 	mlx_hook(game->mlx_win, 3, 1L << 1, keyup_hook, game);
 }

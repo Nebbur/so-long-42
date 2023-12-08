@@ -66,8 +66,8 @@ t_game *game)
 		(*new)++;
 	else
 		(*new)--;
-	if (trig_id[0] == 0 && is_it_safe(*new, cons, game) == 0 || 
-		trig_id[0] == 1 && is_it_safe(cons, *new, game) == 0)
+	if ((trig_id[0] == 0 && is_it_safe(*new, cons, game) == 0) || 
+		(trig_id[0] == 1 && is_it_safe(cons, *new, game) == 0))
 	{
 		if (sig == 0)
 			(*new)--;

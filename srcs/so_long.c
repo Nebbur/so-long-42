@@ -67,9 +67,6 @@ void	init_enemies(t_game *game)
 // General loop of the game
 static int	game_loop(t_game *game)
 {
-	long long	now;
-	long long	diff_millisecs;
-
 	game->current_time = millitimestamp();
 	game->elapsed_time = (game->current_time - game->last_time) * 1000;
 	game->frame_count++;
@@ -85,7 +82,6 @@ static int	game_loop(t_game *game)
 		player(game);
 		show_debug(game);
 		process_map(game);
-		player_position_onthemap(game);
 		return (1);
 	}
 	return (0);

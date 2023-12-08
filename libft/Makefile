@@ -37,7 +37,7 @@ OBJS	:= ${SRCS_O} ${BONUS_O}
 
 CC		:= cc
 RM		:= /bin/rm -f
-CFLAGS	:= -Wall -Wextra -Werror -I*.h
+CFLAGS	:= -Wall -Wextra -Werror -I*.h -fPIE
 
 CL := ar -rc
 RL := ar -s

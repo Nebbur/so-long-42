@@ -200,7 +200,6 @@ int			is_it_safe(int x, int y, t_game *game);
 
 //		player.c
 void		player(t_game *game);
-void		player_position_onthemap(t_game *game);
 void		init_player(t_game *game);
 void		player_position(t_game *game);
 
@@ -257,8 +256,7 @@ void		background(t_game *game);
 //			MAP
 int			init_map(char *path, t_game *game);
 void		free_map(char **map);
-void		aux_find_pic(t_game *game, int pic, int trigger);
-int			dist_two_points(int from_y, int to_y, t_game *game);
+void		aux_find_pic(t_game *game, int trigger);
 void		can_collect_all(char **map_copy, t_game *game, int y, int x);
 void		can_reach_exit(char **map_copy, t_game *game, int y, int x);
 void		freeTempMap(t_game *game, char **tempMap);

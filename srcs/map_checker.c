@@ -17,11 +17,9 @@ int	check_obstacles_or_not(t_game *game)
 	char	**m;
 	int		col;
 	int		rows;
-	int		count;
 
 	m = game->map;
 	rows = -1;
-	count = 0;
 	while (rows < game->rows && m[++rows])
 	{
 		col = -1;

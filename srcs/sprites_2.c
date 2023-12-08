@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-void	aux_destroy_sprite(int i, int s_type, char *path, t_game *game)
+static void	aux_destroy_sprite(int i, int s_type, t_game *game)
 {
 	if (s_type == 1 && game->sprites->p[i] != NULL)
 		mlx_destroy_image(game->mlx, game->sprites->p[i]);
@@ -35,9 +35,7 @@ void	destroy_sprite(char *s_name, int s_nbr, int s_type, t_game *game)
 	char		*path;
 	int			i;
 	int			fd;
-	int			d;
 
-	d = BPX;
 	i = -1;
 	while (++i < s_nbr)
 	{
@@ -50,7 +48,7 @@ void	destroy_sprite(char *s_name, int s_nbr, int s_type, t_game *game)
 			exit (EXIT_SUCCESS);
 		}
 		close(fd);
-		aux_destroy_sprite(i, s_type, path, game);
+		aux_destroy_sprite(i, s_type, game);
 		free(path);
 	}
 }
