@@ -14,7 +14,7 @@
 
 void	aux_move_enemy_2(int new_xy[2], int trig_id[2], t_game *game)
 {
-/* 	if (game->enemy->d <= 1)
+	if (game->enemy->d <= 1)
 		aux_move_enemy(1, new_xy, trig_id, game);
 	if (game->enemy->d == 2)
 	{
@@ -37,12 +37,12 @@ void	aux_move_enemy_2(int new_xy[2], int trig_id[2], t_game *game)
 	trig_id[0] = 1;
 	trig_id[1] = 9;
 	if (game->enemy->d >= 7 && game->enemy->d <= 8)
-		aux_move_enemy(1, new_xy, trig_id, game); */
+		aux_move_enemy(1, new_xy, trig_id, game);
 }
 
 void	aux_move_enemy_1(int new_xy[2], int trig_id[2], t_game *game)
 {
-/* 	if (game->enemy->d <= 1)
+	if (game->enemy->d <= 1)
 		aux_move_enemy(0, new_xy, trig_id, game);
 	if (game->enemy->d == 2)
 	{
@@ -65,7 +65,7 @@ void	aux_move_enemy_1(int new_xy[2], int trig_id[2], t_game *game)
 	trig_id[0] = 1;
 	trig_id[1] = 9;
 	if (game->enemy->d >= 7 && game->enemy->d <= 8)
-		aux_move_enemy(0, new_xy, trig_id, game); */
+		aux_move_enemy(0, new_xy, trig_id, game);
 }
 
 int	get_lines(char *map)
