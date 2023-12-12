@@ -14,15 +14,13 @@
 
 void	init_struct(t_game *game)
 {
-	game->img = ft_calloc(sizeof(t_data), 1);
 	game->player = ft_calloc(sizeof(t_player), 1);
 	game->sprites = ft_calloc(sizeof(t_sprites), 1);
 	game->coin = ft_calloc(sizeof(t_coin), 1);
-	verify_alloc(game->img, game);
 	verify_alloc(game->player, game);
 	verify_alloc(game->sprites, game);
 	verify_alloc(game->coin, game);
-	game->img->img = NULL;
+	game->img = NULL;
 	game->enemies = NULL;
 	game->map = NULL;
 	game->visible_map = NULL;

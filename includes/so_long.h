@@ -45,15 +45,6 @@
 # define KEY_ESC			65307
 # define HUD_LM 			920
 
-typedef struct s_data
-{
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_data;
-
 /*
 	pp	= pixel position [0] = rows (x) | [1] = cols (y)
 	tl	= tick life
@@ -141,6 +132,7 @@ typedef struct game_struct
 	long long	elapsed_time;
 	long long	current_time;
 
+	void		*img;
 	void		*mlx;
 	void		*mlx_win;
 	char		**map;
@@ -163,7 +155,6 @@ typedef struct game_struct
 	t_player	*player;
 	t_enemy		*enemy;
 	t_list		*enemies;
-	t_data		*img;
 	t_coin		*coin;
 
 }			t_game;

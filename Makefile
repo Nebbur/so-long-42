@@ -4,7 +4,7 @@ NAME = so_long
 
 CC = cc
 CFLAGS = -O3 -g -Wall -Wextra -Werror -g
-MLXFLAGS = -L ./minilibx -lm -lmlx -Ilmlx -lXext -lX11 -fsanitize=address
+MLXFLAGS = -L ./minilibx -lm -lmlx -Ilmlx -lXext -lX11 #-fsanitize=address
 RM = rm -rf
 
 INCS	= ./includes
@@ -24,7 +24,7 @@ all: deps $(NAME)
 
 deps:
 	$(MAKE) -C ./libft
-	$(MAKE) -C ./minilibx
+	#$(MAKE) -C ./minilibx
 
 $(NAME): $(OBJS) $(DEPS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -o $(NAME)

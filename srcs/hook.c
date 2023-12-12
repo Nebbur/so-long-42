@@ -29,8 +29,17 @@ int	keyup_hook(int keycode, t_game *game)
 
 int	close_hook(int keycode, t_game *game)
 {
+	ft_printf("keycode: %i\n", keycode);
 	if (keycode == 0)
-		mlx_destroy_window(game->mlx, game->mlx_win);
+	{
+		ft_printf("---------------------------------DEU FREE--------------------------------------------------------\n\n\n\n\n");
+		free_to_all(game);
+	}
+	if (keycode == -16778064)
+	{
+		ft_printf("---------------------------------KEYCODE -1677--------------------------------------------------------\n\n\n\n\n");
+		free_to_all(game);
+	}
 	exit(EXIT_SUCCESS);
 	return (0);
 }

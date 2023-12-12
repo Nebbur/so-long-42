@@ -67,7 +67,7 @@ void	free_enemy_list(t_list *enemy_list)
 
 void	check_null(void **pointer)
 {
-	if (*pointer != NULL)
+	if (*pointer)
 	{
 		free(*pointer);
 		*pointer = NULL;
@@ -76,9 +76,19 @@ void	check_null(void **pointer)
 
 void	free_to_all(t_game *game)
 {
-	check_null((void **)&(game->img));
-	check_null((void **)&(game->player));
-	check_null((void **)&(game->coin));
+	//check_null((void **)&(game->img));
+	//check_null((void **)&(game->player));
+	//check_null((void **)&(game->coin));
+	if (game->player != NULL)
+	{
+		free(game->player);
+		game->player = NULL;
+	}
+	if (game->coin)
+	{
+		free(game->coin);
+		game->coin = NULL;
+	}
 	destroy_sprites(game);
 	if (game->enemies != NULL)
 	{
